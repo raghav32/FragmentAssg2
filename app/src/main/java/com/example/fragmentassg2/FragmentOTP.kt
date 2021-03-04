@@ -21,8 +21,8 @@ class FragmentOTP : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         btnSubmit.setOnClickListener(){
-            val otp:String="567890"
-            if(pinView.text.toString()==otp){
+            val otp="567890"
+            if(pinView.editText?.text.toString()==otp){
                 val intent=Intent(context,HomeActivity::class.java)
                 startActivity(intent)
             }

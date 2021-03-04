@@ -6,121 +6,120 @@
     android:background="@color/white"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/tvGood"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/size10"
-        android:text="@string/good"
-        android:textColor="@color/black"
-        android:textSize="@dimen/text20"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.043" />
 
     <Button
-        android:id="@+id/btnGoogle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/size20"
-        android:text="@string/google"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.518"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvGood" />
+        android:id="@+id/btnHindi"
+        android:layout_width="105dp"
+        android:layout_height="32dp"
+        android:layout_marginLeft="191dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginRight="79dp"
+        android:background="@color/white"
+        android:text="Hindi"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView5"
+        app:layout_constraintRight_toLeftOf="@+id/btnSkip"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+         />
+
+    <Button
+        android:id="@+id/btnSkip"
+        android:layout_width="105dp"
+        android:layout_height="32dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginRight="12dp"
+
+        android:text="Skip"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView5"
+        app:layout_constraintLeft_toRightOf="@+id/btnHindi"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/tvOr"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/size30"
-        android:text="@string/or"
+        android:id="@+id/textView5"
+        android:layout_width="245dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="84dp"
+        android:lineHeight="32sp"
+        android:text="Login or Create an Account"
         android:textColor="@color/black"
-        android:textSize="@dimen/text20"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnGoogle" />
+        android:textSize="20sp"
 
-    <EditText
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.19"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnHindi" />
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/editPhone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/size30"
-        android:ems="10"
-        android:textColorHint="@color/black"
-        android:textColor="@color/black"
-        android:hint="@string/phone"
-
-        android:inputType="phone"
-        app:layout_constraintEnd_toEndOf="@+id/btnGoogle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvOr" />
-
-    <Button
-        android:id="@+id/btnLogin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/size30"
-        android:text="@string/login"
+        android:layout_margin="20dp"
+        android:layout_marginTop="216dp"
+        app:boxBackgroundColor="#17D3EC"
+        app:errorEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:hint="Enter Mobile Number"
+            android:inputType="number" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="71dp"
+
+        android:layout_height="20dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="20dp"
+        android:text="Need Help ?"
+        android:textColor="#00aced"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.919"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editPhone" />
 
     <TextView
-        android:id="@+id/tvSSO"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/size20"
-        android:text="@string/sso"
-        android:textColor="#0B8CF3"
-
-        android:textSize="@dimen/text20"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
-
-    <TextView
-        android:id="@+id/tvForgot"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/size20"
-        android:text="@string/forgot"
-        android:textColor="#0B8CF3"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.146"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvSSO"
-        app:layout_constraintVertical_bias="0.268" />
-
-    <TextView
-        android:id="@+id/tvSign"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/size20"
+        android:layout_width="343dp"
+        android:layout_height="54dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnLogin"
+        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:text="For verification, an SMS will be sent from your mobile number. Standard operator charges may apply. By proceeding you agree to our Terms and Conditions and Privacy Policy. "
+        app:layout_constraintRight_toRightOf="parent"
+        android:textSize="12sp"
         android:textColor="@color/black"
-        android:text="@string/signup"
-        app:layout_constraintBottom_toTopOf="@+id/tvDownload"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.132"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvForgot"
-        app:layout_constraintVertical_bias="0.706" />
-
-    <TextView
-        android:id="@+id/tvDownload"
+        android:gravity="center"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+    
+    
+    <Button
+        android:id="@+id/btnLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/size20"
+        android:layout_marginTop="224dp"
+
+        android:text="Proceed Securely"
         android:textColor="@color/black"
-        android:text="@string/download"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.166"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvForgot"
-        app:layout_constraintVertical_bias="0.325" />
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
