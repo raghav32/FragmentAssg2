@@ -22,7 +22,7 @@ class FragmentOTP : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         btnSubmit.setOnClickListener(){
             val otp="567890"
-            if(pinView.editText?.text.toString()==otp){
+            if(editOTP.editText?.text.toString()==otp){
                 val intent=Intent(context,HomeActivity::class.java)
                 startActivity(intent)
             }

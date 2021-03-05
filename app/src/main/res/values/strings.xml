@@ -4,7 +4,7 @@
     <string name="google">Login With Google</string>
     <string name="or">OR</string>
     <string name="phone">Enter Your Phone Number</string>
-    <string name="login">Login</string>
+
     <string name="sso">Login with SSO</string>
     <string name="forgot">Forgot Password ?</string>
     <string name="signup">No account yet ? Sign Up</string>
@@ -12,4 +12,14 @@
     <string name="pass">Enter Paytm Password</string>
     <string name="verify">Verify Your Account</string>
     <string name="proceed">Proceed Securely</string>
+    
+    <string name="Hindi">Hindi</string>
+    <string name="skip">Skip</string>
+    <string name="Login">Login or Create an Account</string>
+    <string name="help">Need Help ?</string>
+    <string name="info">For verification, an SMS will be sent from your mobile number. Standard operator charges may apply. By proceeding you agree to our Terms and Conditions and Privacy Policy.</string>
+
+    <string name="submit">Submit</string>
+    <string name="enterOTP">Enter OTP</string>
+    <string name="otpNumber">Verify otp sent to +91 9953755955</string>
 </resources>

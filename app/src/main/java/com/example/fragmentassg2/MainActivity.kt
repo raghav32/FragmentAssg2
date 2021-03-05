@@ -2,20 +2,23 @@ package com.example.fragmentassg2
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.app.BundleCompat
 import androidx.fragment.app.Fragment
+import com.google.android.material.textfield.TextInputEditText
 
 class MainActivity : AppCompatActivity() {
 
-    val manager=supportFragmentManager
+    private val manager=supportFragmentManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         addFragment()
 
     }
 
-    fun addFragment(){
+    private fun addFragment(){
         val fragment=FragmentLogin()
         val transaction=manager.beginTransaction()
         transaction.add(R.id.root_layout, fragment)
@@ -23,12 +26,5 @@ class MainActivity : AppCompatActivity() {
         transaction.commit()
     }
 
-    fun replaceFragment(){
-        val fragment=FragmentLogin()
-        val transaction=manager.beginTransaction()
-        transaction.replace(R.id.root_layout, fragment)
-        transaction.addToBackStack(null)
-        transaction.commit()
 
-}
 }
