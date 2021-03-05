@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.login_fragment.*
 import kotlinx.android.synthetic.main.login_fragment.view.*
 
-class FragmentLogin : Fragment() {
+class FragmentLogin : Fragment(), View.OnClickListener {
 
 
 
@@ -27,8 +27,8 @@ class FragmentLogin : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-       // btnHindi?.setOnClickListener(this)
-
+       btnHindi?.setOnClickListener(this)
+        btnSkip?.setOnClickListener(this)
 
 
         btnLogin.setOnClickListener(){
@@ -51,11 +51,14 @@ class FragmentLogin : Fragment() {
         }
     }
 
-     fun onClick(v:View?){
+    override fun onClick(v: View?) {
         when(v){
-            btnHindi->Toast.makeText(context,"Language selected",Toast.LENGTH_SHORT).show()
+            btnHindi->Toast.makeText(context,"Language Hindi",Toast.LENGTH_SHORT).show()
+            btnSkip->Toast.makeText(context,"Skip",Toast.LENGTH_SHORT).show()
         }
+
     }
+
 
 }
 

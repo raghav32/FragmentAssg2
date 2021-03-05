@@ -9,7 +9,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.password_fragment.*
 
-class FragmentPassword : Fragment() {
+class FragmentPassword : Fragment(), View.OnClickListener {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -21,20 +21,13 @@ class FragmentPassword : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        tvFor.setOnClickListener(){
-            Toast.makeText(context,"Forgot Password",Toast.LENGTH_SHORT).show()
-        }
+        tvFor.setOnClickListener(this)
+        tvEnter.setOnClickListener(this)
+        tvGreat.setOnClickListener(this)
 
-        tvEnter.setOnClickListener(){
-            Toast.makeText(context,"Enter Password",Toast.LENGTH_SHORT).show()
-        }
-
-        tvGreat.setOnClickListener(){
-            Toast.makeText(context,"Great to see you again",Toast.LENGTH_SHORT).show()
-        }
 
         btnProceed.setOnClickListener(){
-            val pass:String="1234"
+            val pass="1234"
             if(editPassword.text.toString()==pass){
                 val fragment= FragmentOTP()
                 val fragmentManager=activity!!.supportFragmentManager
@@ -47,6 +40,14 @@ class FragmentPassword : Fragment() {
             else
                 Toast.makeText(context,"wrong",Toast.LENGTH_SHORT).show()
 
+        }
+    }
+
+    override fun onClick(v: View?) {
+        when(v){
+            tvFor->Toast.makeText(context,"Forgot Password",Toast.LENGTH_SHORT).show()
+            tvEnter->Toast.makeText(context,"Enter Password",Toast.LENGTH_SHORT).show()
+            tvGreat->Toast.makeText(context,"Great to see you again",Toast.LENGTH_SHORT).show()
         }
     }
 }

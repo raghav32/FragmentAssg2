@@ -22,4 +22,5 @@
     <string name="submit">Submit</string>
     <string name="enterOTP">Enter OTP</string>
     <string name="otpNumber">Verify otp sent to +91 9953755955</string>
+    <string name="password">Enter Password</string>
 </resources>
