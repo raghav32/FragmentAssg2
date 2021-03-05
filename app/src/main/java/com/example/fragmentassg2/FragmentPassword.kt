@@ -21,6 +21,10 @@ class FragmentPassword : Fragment(), View.OnClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val mobile= arguments?.getString("key")
+
+
+
         tvFor.setOnClickListener(this)
         tvEnter.setOnClickListener(this)
         tvGreat.setOnClickListener(this)
@@ -29,11 +33,16 @@ class FragmentPassword : Fragment(), View.OnClickListener {
         btnProceed.setOnClickListener(){
             val pass="1234"
             if(editPassword.text.toString()==pass){
-                val fragment= FragmentOTP()
+                val fragmentOtp= FragmentOTP()
                 val fragmentManager=activity!!.supportFragmentManager
                 val fragmentTransaction=fragmentManager.beginTransaction()
+
+                val bundle=Bundle()
+                bundle.putString("key",mobile)
+                fragmentOtp.arguments=bundle
+
                 fragmentTransaction.setCustomAnimations(R.anim.enter_right_to_left,R.anim.exit_right_to_left,R.anim.enter_left_to_right,R.anim.exit_left_to_right)
-                fragmentTransaction.replace(R.id.root_layout,fragment)
+                fragmentTransaction.replace(R.id.root_layout,fragmentOtp)
                 fragmentTransaction.addToBackStack(null)
                 fragmentTransaction.commit()
             }
@@ -45,9 +54,12 @@ class FragmentPassword : Fragment(), View.OnClickListener {
 
     override fun onClick(v: View?) {
         when(v){
-            tvFor->Toast.makeText(context,"Forgot Password",Toast.LENGTH_SHORT).show()
+            tvFor->Toast.makeText(context,"",Toast.LENGTH_SHORT).show()
             tvEnter->Toast.makeText(context,"Enter Password",Toast.LENGTH_SHORT).show()
             tvGreat->Toast.makeText(context,"Great to see you again",Toast.LENGTH_SHORT).show()
+            btnProceed->{
+
+            }
         }
     }
 }

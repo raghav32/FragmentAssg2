@@ -16,10 +16,14 @@ class FragmentOTP : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.otp_fragment,container,false)
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        tvVerify.text=getString(R.string.lbl_enter_otp_sent_to,arguments?.getString("key"))
+
         btnSubmit.setOnClickListener(){
             val otp="567890"
             if(editOTP.editText?.text.toString()==otp){

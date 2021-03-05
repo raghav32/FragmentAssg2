@@ -37,9 +37,17 @@ class FragmentLogin : Fragment(), View.OnClickListener {
             if(editPhone.editText?.text.toString()==number){
 
 
+
+
+
                 val fragment=FragmentPassword()
                 val fragmentManager=activity!!.supportFragmentManager
                 val fragmentTransaction=fragmentManager.beginTransaction()
+
+                val bundle=Bundle()
+                bundle.putString("key",number)
+                fragment.arguments=bundle
+
                 fragmentTransaction.setCustomAnimations(R.anim.enter_right_to_left,R.anim.exit_right_to_left,R.anim.enter_left_to_right,R.anim.exit_left_to_right)
                 fragmentTransaction.replace(R.id.root_layout,fragment)
                 fragmentTransaction.addToBackStack(null)
