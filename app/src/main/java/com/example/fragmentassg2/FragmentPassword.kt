@@ -20,45 +20,40 @@ class FragmentPassword : Fragment(), View.OnClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val mobile= arguments?.getString("key")
-
-
-
         tvFor.setOnClickListener(this)
         tvEnter.setOnClickListener(this)
         tvGreat.setOnClickListener(this)
-
-
-        btnProceed.setOnClickListener(){
-            val pass="1234"
-            if(editPassword.text.toString()==pass){
-                val fragmentOtp= FragmentOTP()
-                val fragmentManager=activity!!.supportFragmentManager
-                val fragmentTransaction=fragmentManager.beginTransaction()
-
-                val bundle=Bundle()
-                bundle.putString("key",mobile)
-                fragmentOtp.arguments=bundle
-
-                fragmentTransaction.setCustomAnimations(R.anim.enter_right_to_left,R.anim.exit_right_to_left,R.anim.enter_left_to_right,R.anim.exit_left_to_right)
-                fragmentTransaction.replace(R.id.root_layout,fragmentOtp)
-                fragmentTransaction.addToBackStack(null)
-                fragmentTransaction.commit()
-            }
-            else
-                Toast.makeText(context,"wrong",Toast.LENGTH_SHORT).show()
-
-        }
+        btnProceed.setOnClickListener(this)
     }
 
-    override fun onClick(v: View?) {
-        when(v){
-            tvFor->Toast.makeText(context,"",Toast.LENGTH_SHORT).show()
-            tvEnter->Toast.makeText(context,"Enter Password",Toast.LENGTH_SHORT).show()
-            tvGreat->Toast.makeText(context,"Great to see you again",Toast.LENGTH_SHORT).show()
-            btnProceed->{
 
+    override fun onClick(v: View?) {
+        val mobile= arguments?.getString("key")
+
+        when(v){
+
+            tvFor->Toast.makeText(context,"",Toast.LENGTH_SHORT).show()
+            tvEnter->Toast.makeText(context,getString(R.string.pass),Toast.LENGTH_SHORT).show()
+            tvGreat->Toast.makeText(context,getString(R.string.good),Toast.LENGTH_SHORT).show()
+
+            btnProceed->{
+                val pass="1234"
+                if(editPassword.text.toString()==pass){
+                    val fragmentOtp= FragmentOTP()
+                    val fragmentManager=activity!!.supportFragmentManager
+                    val fragmentTransaction=fragmentManager.beginTransaction()
+
+                    val bundle=Bundle()
+                    bundle.putString("key",mobile)
+                    fragmentOtp.arguments=bundle
+
+                    fragmentTransaction.setCustomAnimations(R.anim.enter_right_to_left,R.anim.exit_right_to_left,R.anim.enter_left_to_right,R.anim.exit_left_to_right)
+                    fragmentTransaction.replace(R.id.root_layout,fragmentOtp)
+                    fragmentTransaction.addToBackStack(null)
+                    fragmentTransaction.commit()
+                }
+                else
+                    Toast.makeText(context,"wrong",Toast.LENGTH_SHORT).show()
             }
         }
     }

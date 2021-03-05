@@ -13,7 +13,6 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/margin191"
         android:layout_marginTop="@dimen/margin52"
-        android:background="@color/white"
         android:text="@string/Hindi"
         android:textColor="@color/black"
         android:textSize="@dimen/text10"

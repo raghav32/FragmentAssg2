@@ -15,16 +15,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         addFragment()
-
     }
 
     private fun addFragment(){
         val fragment=FragmentLogin()
         val transaction=manager.beginTransaction()
         transaction.add(R.id.root_layout, fragment)
-       // transaction.addToBackStack(null)
         transaction.commit()
     }
-
-
 }
