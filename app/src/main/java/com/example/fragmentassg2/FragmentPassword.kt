@@ -22,7 +22,6 @@ class FragmentPassword : Fragment(), View.OnClickListener {
         super.onViewCreated(view, savedInstanceState)
         tvFor.setOnClickListener(this)
         tvEnter.setOnClickListener(this)
-        tvGreat.setOnClickListener(this)
         btnProceed.setOnClickListener(this)
     }
 
@@ -32,13 +31,13 @@ class FragmentPassword : Fragment(), View.OnClickListener {
 
         when(v){
 
-            tvFor->Toast.makeText(context,"",Toast.LENGTH_SHORT).show()
+            tvFor->Toast.makeText(context,getString(R.string.forgotpass),Toast.LENGTH_SHORT).show()
             tvEnter->Toast.makeText(context,getString(R.string.pass),Toast.LENGTH_SHORT).show()
-            tvGreat->Toast.makeText(context,getString(R.string.good),Toast.LENGTH_SHORT).show()
+
 
             btnProceed->{
                 val pass="1234"
-                if(editPassword.text.toString()==pass){
+                if(editPassword.editText?.text.toString()==pass){
                     val fragmentOtp= FragmentOTP()
                     val fragmentManager=activity!!.supportFragmentManager
                     val fragmentTransaction=fragmentManager.beginTransaction()
