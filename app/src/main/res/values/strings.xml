@@ -25,4 +25,9 @@
     <string name="lbl_enter_otp_sent_to">Enter OTP sent on %s</string>
 
     <string name="password">Enter Password</string>
+
+    <string name="blocked">Account Blocked</string>
+    <string name="info2">We have found suspicious activity from this number. To secure your funds we have blocked your account. You can unblock your account by raising a request.</string>
+
+    <string name="otpTime">You can request another otp in 57 se</string>
 </resources>
