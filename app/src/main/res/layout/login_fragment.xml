@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     android:background="@color/white">
 
 
@@ -11,55 +12,48 @@
         android:id="@+id/btnHindi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/margin191"
         android:layout_marginTop="@dimen/margin52"
         android:text="@string/Hindi"
+        android:background="@drawable/round_button"
         android:textColor="@color/black"
         android:textSize="@dimen/text10"
-        app:layout_constraintBottom_toTopOf="@+id/tvLogin"
+        android:layout_marginRight="12dp"
         app:layout_constraintEnd_toStartOf="@+id/btnSkip"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnSkip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/margin12"
         android:layout_marginTop="@dimen/margin52"
-        android:layout_marginRight="@dimen/margin12"
+        android:background="@drawable/round_button"
         android:text="@string/skip"
         android:textColor="@color/black"
         android:textSize="@dimen/text10"
-        app:layout_constraintStart_toEndOf="@+id/btnHindi"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
     <TextView
         android:id="@+id/tvLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin26"
-        android:layout_marginLeft="@dimen/margin16"
-
         android:text="@string/Login"
         android:textColor="@color/black"
         android:textSize="@dimen/text20"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnHindi"
-        android:layout_marginStart="@dimen/margin16" />
+         />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/editPhone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin99"
-        android:layout_marginLeft="@dimen/margin16"
-        android:layout_marginRight="@dimen/margin16"
-        app:boxBackgroundColor="@color/azure"
-        app:errorEnabled="true"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="61dp"
 
+        app:boxBackgroundColor="#8ba6c1"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvLogin">
 
@@ -80,17 +74,14 @@
         android:text="@string/help"
         android:textColor="@color/azure"
         android:textSize="@dimen/text12"
-        android:layout_marginLeft="@dimen/margin288"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editPhone" />
 
     <TextView
         android:id="@+id/info"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-         android:layout_marginTop="@dimen/margin150"
-        android:layout_marginLeft="@dimen/margin16"
-        android:layout_marginRight="@dimen/margin16"
+        android:layout_marginBottom="@dimen/margin16"
         android:gravity="center"
         android:text="@string/info"
         android:textColor="@color/black"
@@ -98,19 +89,20 @@
         app:layout_constraintBottom_toTopOf="@+id/btnLogin"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvHelp" />
+         />
 
 
     <Button
         android:id="@+id/btnLogin"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin16"
         android:text="@string/proceed"
+        android:background="@color/azure"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/info" />
+        app:layout_constraintBottom_toBottomOf="parent"
+         />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

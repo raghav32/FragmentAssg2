@@ -25,7 +25,7 @@ class FragmentLogin : Fragment(), View.OnClickListener {
         super.onViewCreated(view, savedInstanceState)
         btnHindi?.setOnClickListener(this)
         btnSkip?.setOnClickListener(this)
-        btnLogin.setOnClickListener(this)
+        btnLogin?.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
