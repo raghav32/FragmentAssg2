@@ -4,12 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.password_fragment.*
 
 class FragmentPassword : Fragment(), View.OnClickListener {
+
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -20,9 +21,10 @@ class FragmentPassword : Fragment(), View.OnClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        tvFor.setOnClickListener(this)
-        tvEnter.setOnClickListener(this)
-        btnProceed.setOnClickListener(this)
+        tvFor?.setOnClickListener(this)
+        tvEnter?.setOnClickListener(this)
+        btnProceed?.setOnClickListener(this)
+        btnBack?.setOnClickListener(this)
     }
 
 
@@ -54,6 +56,19 @@ class FragmentPassword : Fragment(), View.OnClickListener {
                 else
                     Toast.makeText(context,"wrong",Toast.LENGTH_SHORT).show()
             }
+            btnBack->{
+                replaceFragment()
+            }
         }
+    }
+
+    private fun replaceFragment() {
+        val fragmentReplaceLogin=FragmentLogin()
+        val fragmentManager=activity!!.supportFragmentManager
+        val transaction=fragmentManager.beginTransaction()
+        transaction.setCustomAnimations(R.anim.enter_right_to_left,R.anim.exit_right_to_left,R.anim.enter_left_to_right,R.anim.exit_left_to_right)
+        transaction.replace(R.id.root_layout,fragmentReplaceLogin)
+        transaction.addToBackStack(null)
+        transaction.commit()
     }
 }

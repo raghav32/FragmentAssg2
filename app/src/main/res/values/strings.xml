@@ -31,4 +31,7 @@
 
     <string name="otpTime">You can request another otp in 57 sec</string>
     <string name="forgotpass">Forgot Password</string>
+    <string name="cancel">Cancel</string>
+    <string name="unblock">Unblock account</string>
+    <string name="otpSent">OTP sent successfully</string>
 </resources>
