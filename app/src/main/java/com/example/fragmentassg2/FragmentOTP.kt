@@ -10,6 +10,9 @@ import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.otp_fragment.*
 
 class FragmentOTP : Fragment() {
+
+    private val otp="567890"
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -22,10 +25,10 @@ class FragmentOTP : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        tvVerify.text=getString(R.string.lbl_enter_otp_sent_to,arguments?.getString("key"))
+        tvVerify.text=getString(R.string.lbl_enter_otp_sent_to,arguments?.getString("PhoneKey"))
 
         btnSubmit.setOnClickListener(){
-            val otp="567890"
+
             if(editOTP.editText?.text.toString()==otp){
                 val intent=Intent(context,HomeActivity::class.java)
                 startActivity(intent)

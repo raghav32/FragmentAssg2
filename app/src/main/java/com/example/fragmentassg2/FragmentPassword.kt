@@ -10,6 +10,7 @@ import kotlinx.android.synthetic.main.password_fragment.*
 
 class FragmentPassword : Fragment(), View.OnClickListener {
 
+    private val pass="1234"
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,8 +30,7 @@ class FragmentPassword : Fragment(), View.OnClickListener {
 
 
     override fun onClick(v: View?) {
-        val mobile= arguments?.getString("key")
-
+        val mobile= arguments?.getString("PhoneKey")
         when(v){
 
             tvFor->Toast.makeText(context,getString(R.string.forgotpass),Toast.LENGTH_SHORT).show()
@@ -38,14 +38,14 @@ class FragmentPassword : Fragment(), View.OnClickListener {
 
 
             btnProceed->{
-                val pass="1234"
+
                 if(editPassword.editText?.text.toString()==pass){
                     val fragmentOtp= FragmentOTP()
                     val fragmentManager=activity!!.supportFragmentManager
                     val fragmentTransaction=fragmentManager.beginTransaction()
 
                     val bundle=Bundle()
-                    bundle.putString("key",mobile)
+                    bundle.putString("PhoneKey",mobile)
                     fragmentOtp.arguments=bundle
 
                     fragmentTransaction.setCustomAnimations(R.anim.enter_right_to_left,R.anim.exit_right_to_left,R.anim.enter_left_to_right,R.anim.exit_left_to_right)
@@ -66,7 +66,7 @@ class FragmentPassword : Fragment(), View.OnClickListener {
         val fragmentReplaceLogin=FragmentLogin()
         val fragmentManager=activity!!.supportFragmentManager
         val transaction=fragmentManager.beginTransaction()
-        transaction.setCustomAnimations(R.anim.enter_right_to_left,R.anim.exit_right_to_left,R.anim.enter_left_to_right,R.anim.exit_left_to_right)
+       transaction.setCustomAnimations(R.anim.enter_left_to_right,R.anim.exit_left_to_right,R.anim.enter_right_to_left,R.anim.exit_right_to_left)
         transaction.replace(R.id.root_layout,fragmentReplaceLogin)
         transaction.addToBackStack(null)
         transaction.commit()

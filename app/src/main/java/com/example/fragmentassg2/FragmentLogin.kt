@@ -13,6 +13,8 @@ import kotlinx.android.synthetic.main.login_fragment.view.*
 
 class FragmentLogin : Fragment(), View.OnClickListener {
 
+    private val fragment=FragmentPassword()
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -38,12 +40,12 @@ class FragmentLogin : Fragment(), View.OnClickListener {
                 val number ="9953755955"
 
                 if(editPhone.editText?.text.toString()==number){
-                    val fragment=FragmentPassword()
+
                     val fragmentManager=activity!!.supportFragmentManager
                     val fragmentTransaction=fragmentManager.beginTransaction()
 
                     val bundle=Bundle()
-                    bundle.putString("key",number)
+                    bundle.putString("PhoneKey",number)
                     fragment.arguments=bundle
 
                     fragmentTransaction.setCustomAnimations(R.anim.enter_right_to_left,R.anim.exit_right_to_left,R.anim.enter_left_to_right,R.anim.exit_left_to_right)
