@@ -61,9 +61,11 @@
         app:layout_constraintTop_toBottomOf="@+id/tvOTP">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editOTPIme"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/enterOTP"
+            android:imeOptions="actionDone"
             android:inputType="number"
             android:textColor="@color/black"/>
     </com.google.android.material.textfield.TextInputLayout>
