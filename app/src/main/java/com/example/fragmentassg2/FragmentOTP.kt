@@ -29,6 +29,9 @@ class FragmentOTP : Fragment() {
 
         tvVerify.text=getString(R.string.lbl_enter_otp_sent_to,arguments?.getString("PhoneKey"))
 
+        (requireActivity() as MainActivity).showBackButton(false)
+
+
         view.findViewById<TextInputEditText>(R.id.editOTPIme).setOnEditorActionListener { v, actionId, event ->
             return@setOnEditorActionListener when (actionId) {
                 EditorInfo.IME_ACTION_DONE -> {

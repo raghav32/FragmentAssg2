@@ -1,37 +1,32 @@
 <resources>
     <string name="app_name">FragmentAssg2</string>
-    <string name="good">Great To See You Again</string>
-    <string name="google">Login With Google</string>
-    <string name="or">OR</string>
+
+    <string name="lbl_btn_proceed">Proceed Securely</string>
+    <string name="lbl_btn_hindi">Hindi</string>
+    <string name="lbl_btn_skip">Skip</string>
+    <string name="lbl_head_login">Login or Create an Account</string>
+    <string name="lbl_help">Need Help ?</string>
+    <string name="lbl_verif_info">For verification, an SMS will be sent from your mobile number. Standard operator charges may apply. By proceeding you agree to our Terms and Conditions and Privacy Policy.</string>
+
+
+    <string name="lbl_subhead_verify">Verify Your Account</string>
     <string name="phone">Enter Your Phone Number</string>
+    <string name="lbl_forgot">Forgot Password ?</string>
+    <string name="lbl_head_pass">Enter Paytm Password</string>
 
-    <string name="sso">Login with SSO</string>
-    <string name="forgot">Forgot Password ?</string>
-    <string name="signup">No account yet ? Sign Up</string>
-    <string name="download">Looking for the app ? Download Here</string>
-    <string name="pass">Enter Paytm Password</string>
-    <string name="verify">Verify Your Account</string>
-    <string name="proceed">Proceed Securely</string>
-    
-    <string name="Hindi">Hindi</string>
-    <string name="skip">Skip</string>
-    <string name="Login">Login or Create an Account</string>
-    <string name="help">Need Help ?</string>
-    <string name="info">For verification, an SMS will be sent from your mobile number. Standard operator charges may apply. By proceeding you agree to our Terms and Conditions and Privacy Policy.</string>
-
-    <string name="submit">Submit</string>
-    <string name="enterOTP">Enter OTP</string>
+    <string name="lbl_btn_submit">Submit</string>
+    <string name="lbl_otpSent">OTP sent successfully</string>
+    <string name="lbl_enterOTP">Enter OTP</string>
     <string name="otpNumber">Verify otp sent to </string>
     <string name="lbl_enter_otp_sent_to">Enter OTP sent on %s</string>
-
     <string name="password">Enter Password</string>
 
-    <string name="blocked">Account Blocked</string>
-    <string name="info2">We have found suspicious activity from this number. To secure your funds we have blocked your account. You can unblock your account by raising a request.</string>
+    <string name="lbl_accountBlocked">Account Blocked</string>
+    <string name="lbl_home_info">We have found suspicious activity from this number. To secure your funds we have blocked your account. You can unblock your account by raising a request.</string>
 
-    <string name="otpTime">You can request another otp in 57 sec</string>
+    <string name="lbl_otpTime">You can request another otp in 57 sec</string>
     <string name="forgotpass">Forgot Password</string>
-    <string name="cancel">Cancel</string>
-    <string name="unblock">Unblock account</string>
-    <string name="otpSent">OTP sent successfully</string>
+    <string name="lbl_cancel">Cancel</string>
+    <string name="lbl_unblock">Unblock account</string>
+
 </resources>

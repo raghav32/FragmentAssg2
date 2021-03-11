@@ -25,9 +25,11 @@ class FragmentPassword : Fragment(), View.OnClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         tvFor?.setOnClickListener(this)
-        tvEnter?.setOnClickListener(this)
         btnProceed?.setOnClickListener(this)
-        btnBack?.setOnClickListener(this)
+     //   btnBack?.setOnClickListener(this)
+
+        (requireActivity() as MainActivity).showBackButton(true)
+
 
         view.findViewById<TextInputEditText>(R.id.editPassIme).setOnEditorActionListener { v, actionId, event ->
             return@setOnEditorActionListener when (actionId) {
@@ -46,13 +48,11 @@ class FragmentPassword : Fragment(), View.OnClickListener {
         when(v){
 
             tvFor->Toast.makeText(context,getString(R.string.forgotpass),Toast.LENGTH_SHORT).show()
-            tvEnter->Toast.makeText(context,getString(R.string.pass),Toast.LENGTH_SHORT).show()
+
             btnProceed->{
                proceed()
             }
-            btnBack->{
-                replaceFragment()
-            }
+
         }
     }
 

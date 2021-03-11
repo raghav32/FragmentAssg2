@@ -14,7 +14,7 @@
     android:background="@color/green"
     android:textSize="@dimen/text20"
     android:textAlignment="center"
-    android:text="@string/otpSent"
+    android:text="@string/lbl_otpSent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintStart_toStartOf="parent"
@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin50"
         android:layout_marginLeft="@dimen/margin16"
-        android:text="@string/enterOTP"
+        android:text="@string/lbl_enterOTP"
         android:textColor="#1d2f54"
         android:textSize="@dimen/text30"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,14 +64,14 @@
             android:id="@+id/editOTPIme"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/enterOTP"
+            android:hint="@string/lbl_enterOTP"
             android:imeOptions="actionDone"
             android:inputType="number"
             android:textColor="@color/black"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
-        android:text="@string/otpTime"
+        android:text="@string/lbl_otpTime"
         android:layout_marginTop="@dimen/margin16"
         android:textColor="#8ba6c1"
         android:layout_marginRight="@dimen/margin16"
@@ -92,7 +92,7 @@
         android:layout_marginRight="@dimen/margin16"
         android:layout_marginBottom="@dimen/margin16"
         android:textColor="@color/black"
-        android:text="@string/submit"
+        android:text="@string/lbl_btn_submit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" />

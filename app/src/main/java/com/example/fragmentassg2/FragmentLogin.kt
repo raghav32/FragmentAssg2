@@ -37,6 +37,8 @@ class FragmentLogin : Fragment(), View.OnClickListener {
         btnSkip?.setOnClickListener(this)
         btnLogin?.setOnClickListener(this)
 
+        (requireActivity() as MainActivity).showBackButton(false)
+
         view.findViewById<TextInputEditText>(R.id.editPhoneIme).setOnEditorActionListener { v, actionId, event ->
             return@setOnEditorActionListener when (actionId) {
                 EditorInfo.IME_ACTION_DONE -> {
@@ -52,8 +54,8 @@ class FragmentLogin : Fragment(), View.OnClickListener {
     override fun onClick(v: View?) {
         when(v){
 
-            btnHindi->Toast.makeText(context,getString(R.string.Hindi),Toast.LENGTH_SHORT).show()
-            btnSkip->Toast.makeText(context,getString(R.string.skip),Toast.LENGTH_SHORT).show()
+            btnHindi->Toast.makeText(context,getString(R.string.lbl_btn_hindi),Toast.LENGTH_SHORT).show()
+            btnSkip->Toast.makeText(context,getString(R.string.lbl_btn_skip),Toast.LENGTH_SHORT).show()
             btnLogin->{
                login()
             }
