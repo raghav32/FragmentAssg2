@@ -9,4 +9,9 @@ class PasswordViewModel:ViewModel() {
         super.onCleared()
         Log.i("PasswordViewModel", "PasswordViewModel destroyed!")
     }
+
+    fun validatePassword(pass:String):Boolean{
+        return pass.isNotEmpty() && pass.isNotBlank()
+    }
+
 }

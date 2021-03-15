@@ -9,4 +9,8 @@ class OTPViewModel:ViewModel() {
         super.onCleared()
         Log.i("OTPViewModel", "OTPViewModel destroyed!")
     }
+
+    fun validateOTP(otp: String): Boolean {
+        return otp.isNotEmpty() && otp.isNotBlank()
+    }
 }

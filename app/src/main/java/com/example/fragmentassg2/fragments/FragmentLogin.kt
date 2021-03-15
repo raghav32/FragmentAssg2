@@ -69,9 +69,8 @@ class FragmentLogin : Fragment(), View.OnClickListener {
         val number ="9953755955"
 
         val checkPhoneNumber:Boolean=viewModel.validatePhoneNumber(number)
-        val phone:Boolean=viewModel.phoneNumberLength(number)
 
-        if(editPhone.editText?.text.toString()==number && checkPhoneNumber && phone ){
+        if(editPhone.editText?.text.toString()==number && checkPhoneNumber){
 
             val fragmentManager=requireActivity().supportFragmentManager
             val fragmentTransaction=fragmentManager.beginTransaction()
@@ -90,7 +89,8 @@ class FragmentLogin : Fragment(), View.OnClickListener {
             fragmentTransaction.addToBackStack(null)
             fragmentTransaction.commit()
         }
-        else
-            Toast.makeText(context,"Wrong Phone Number",Toast.LENGTH_SHORT).show()
+        else {
+            Toast.makeText(requireActivity(), "Wrong Phone Number", Toast.LENGTH_SHORT).show()
+        }
     }
 }

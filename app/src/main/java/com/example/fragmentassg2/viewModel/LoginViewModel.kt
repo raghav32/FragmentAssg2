@@ -17,15 +17,7 @@ class LoginViewModel: ViewModel() {
     }
 
     fun validatePhoneNumber(phoneNumber: String): Boolean {
-        return phoneNumber.isNotEmpty()
+        return phoneNumber.isNotEmpty() && phoneNumber.isNotBlank()
     }
-
-      fun phoneNumberLength(phone: String):Boolean {
-         if(phone.length==10)
-             return true
-          else
-              return false
-
-}
 
 }
