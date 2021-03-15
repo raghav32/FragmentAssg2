@@ -1,4 +1,4 @@
-package com.example.fragmentassg2
+package com.example.fragmentassg2.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.example.fragmentassg2.MainActivity
+import com.example.fragmentassg2.R
 import com.google.android.material.textfield.TextInputEditText
 import kotlinx.android.synthetic.main.password_fragment.*
 
@@ -57,10 +59,15 @@ class FragmentPassword : Fragment(), View.OnClickListener {
     }
 
     private fun replaceFragment() {
-        val fragmentReplaceLogin=FragmentLogin()
+        val fragmentReplaceLogin= FragmentLogin()
         val fragmentManager=activity!!.supportFragmentManager
         val transaction=fragmentManager.beginTransaction()
-       transaction.setCustomAnimations(R.anim.enter_left_to_right,R.anim.exit_left_to_right,R.anim.enter_right_to_left,R.anim.exit_right_to_left)
+       transaction.setCustomAnimations(
+           R.anim.enter_left_to_right,
+           R.anim.exit_left_to_right,
+           R.anim.enter_right_to_left,
+           R.anim.exit_right_to_left
+       )
         transaction.replace(R.id.root_layout,fragmentReplaceLogin)
         transaction.addToBackStack(null)
         transaction.commit()
@@ -78,7 +85,12 @@ class FragmentPassword : Fragment(), View.OnClickListener {
             bundle.putString("PhoneKey",mobile)
             fragmentOtp.arguments=bundle
 
-            fragmentTransaction.setCustomAnimations(R.anim.enter_right_to_left,R.anim.exit_right_to_left,R.anim.enter_left_to_right,R.anim.exit_left_to_right)
+            fragmentTransaction.setCustomAnimations(
+                R.anim.enter_right_to_left,
+                R.anim.exit_right_to_left,
+                R.anim.enter_left_to_right,
+                R.anim.exit_left_to_right
+            )
             fragmentTransaction.replace(R.id.root_layout,fragmentOtp)
             fragmentTransaction.addToBackStack(null)
             fragmentTransaction.commit()

@@ -3,9 +3,7 @@ package com.example.fragmentassg2
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import androidx.core.app.BundleCompat
-import androidx.fragment.app.Fragment
-import com.google.android.material.textfield.TextInputEditText
+import com.example.fragmentassg2.fragments.FragmentLogin
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -24,7 +22,7 @@ class MainActivity : AppCompatActivity() {
     }
 
        private fun addFragment(){
-        val fragment=FragmentLogin()
+        val fragment= FragmentLogin()
            val transaction=manager.beginTransaction()
         transaction.add(R.id.root_layout, fragment)
         transaction.commit()

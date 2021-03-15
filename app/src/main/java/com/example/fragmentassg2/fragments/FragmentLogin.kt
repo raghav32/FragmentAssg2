@@ -1,34 +1,29 @@
-package com.example.fragmentassg2
+package com.example.fragmentassg2.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
-import android.widget.Button
 import android.widget.Toast
-import androidx.core.view.get
 import androidx.fragment.app.Fragment
+import com.example.fragmentassg2.MainActivity
+import com.example.fragmentassg2.R
 import com.google.android.material.textfield.TextInputEditText
-import com.google.android.material.textfield.TextInputLayout
 import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.login_fragment.*
 import kotlinx.android.synthetic.main.login_fragment.view.*
 
 class FragmentLogin : Fragment(), View.OnClickListener {
 
-    private val fragment=FragmentPassword()
+    private val fragment= FragmentPassword()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-
-
         return inflater.inflate(R.layout.login_fragment,container,false)
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -48,7 +43,6 @@ class FragmentLogin : Fragment(), View.OnClickListener {
                 else -> false
             }
         }
-
     }
 
     override fun onClick(v: View?) {
@@ -61,20 +55,23 @@ class FragmentLogin : Fragment(), View.OnClickListener {
             }
         }
     }
-
     private fun login(){
         val number ="9953755955"
 
         if(editPhone.editText?.text.toString()==number){
-
-            val fragmentManager=activity!!.supportFragmentManager
+            val fragmentManager=requireActivity().supportFragmentManager
             val fragmentTransaction=fragmentManager.beginTransaction()
 
             val bundle=Bundle()
             bundle.putString("PhoneKey",number)
             fragment.arguments=bundle
 
-            fragmentTransaction.setCustomAnimations(R.anim.enter_right_to_left,R.anim.exit_right_to_left,R.anim.enter_left_to_right,R.anim.exit_left_to_right)
+            fragmentTransaction.setCustomAnimations(
+                R.anim.enter_right_to_left,
+                R.anim.exit_right_to_left,
+                R.anim.enter_left_to_right,
+                R.anim.exit_left_to_right
+            )
             fragmentTransaction.replace(R.id.root_layout,fragment)
             fragmentTransaction.addToBackStack(null)
             fragmentTransaction.commit()
@@ -83,6 +80,3 @@ class FragmentLogin : Fragment(), View.OnClickListener {
             Toast.makeText(context,"wrong",Toast.LENGTH_SHORT).show()
     }
 }
-
-
-
