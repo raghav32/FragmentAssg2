@@ -1,26 +1,36 @@
 package com.example.fragmentassg2.fragments
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.example.fragmentassg2.MainActivity
 import com.example.fragmentassg2.R
+import com.example.fragmentassg2.viewModel.OTPViewModel
+import com.example.fragmentassg2.viewModel.PasswordViewModel
 import com.google.android.material.textfield.TextInputEditText
 import kotlinx.android.synthetic.main.password_fragment.*
 
 class FragmentPassword : Fragment(), View.OnClickListener {
 
     private val pass="1234"
+    private lateinit var viewModel: PasswordViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        Log.i("PasswordFragment", "Called ViewModelProvider.get")
+        // Get the viewModel
+        viewModel = ViewModelProvider(this).get(PasswordViewModel::class.java)
+
         return inflater.inflate(R.layout.password_fragment,container,false)
     }
 

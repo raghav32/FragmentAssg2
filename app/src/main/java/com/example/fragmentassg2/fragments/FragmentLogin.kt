@@ -1,14 +1,17 @@
 package com.example.fragmentassg2.fragments
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.example.fragmentassg2.MainActivity
 import com.example.fragmentassg2.R
+import com.example.fragmentassg2.viewModel.LoginViewModel
 import com.google.android.material.textfield.TextInputEditText
 import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.login_fragment.*
@@ -18,11 +21,18 @@ class FragmentLogin : Fragment(), View.OnClickListener {
 
     private val fragment= FragmentPassword()
 
+    private lateinit var viewModel: LoginViewModel
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        Log.i("LoginFragment", "Called ViewModelProvider.get")
+        // Get the viewModel
+        viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
+
         return inflater.inflate(R.layout.login_fragment,container,false)
     }
 
@@ -58,11 +68,15 @@ class FragmentLogin : Fragment(), View.OnClickListener {
     private fun login(){
         val number ="9953755955"
 
-        if(editPhone.editText?.text.toString()==number){
+        val checkPhoneNumber:Boolean=viewModel.validatePhoneNumber(number)
+        val phone:Boolean=viewModel.phoneNumberLength(number)
+
+        if(editPhone.editText?.text.toString()==number && checkPhoneNumber && phone ){
+
             val fragmentManager=requireActivity().supportFragmentManager
             val fragmentTransaction=fragmentManager.beginTransaction()
 
-            val bundle=Bundle()
+            val bundle= Bundle()
             bundle.putString("PhoneKey",number)
             fragment.arguments=bundle
 
@@ -77,6 +91,6 @@ class FragmentLogin : Fragment(), View.OnClickListener {
             fragmentTransaction.commit()
         }
         else
-            Toast.makeText(context,"wrong",Toast.LENGTH_SHORT).show()
+            Toast.makeText(context,"Wrong Phone Number",Toast.LENGTH_SHORT).show()
     }
 }
