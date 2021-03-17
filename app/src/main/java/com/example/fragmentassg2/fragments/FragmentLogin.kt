@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.fragmentassg2.MainActivity
 import com.example.fragmentassg2.R
+import com.example.fragmentassg2.util.Constant
 import com.example.fragmentassg2.viewModel.LoginViewModel
 import com.google.android.material.textfield.TextInputEditText
 import kotlinx.android.synthetic.*
@@ -28,12 +29,14 @@ class FragmentLogin : Fragment(), View.OnClickListener {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        return inflater.inflate(R.layout.login_fragment,container,false)
+    }
 
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
         Log.i("LoginFragment", "Called ViewModelProvider.get")
         // Get the viewModel
         viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
-
-        return inflater.inflate(R.layout.login_fragment,container,false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -66,17 +69,18 @@ class FragmentLogin : Fragment(), View.OnClickListener {
         }
     }
     private fun login(){
-        val number ="9953755955"
 
-        val checkPhoneNumber:Boolean=viewModel.validatePhoneNumber(number)
+        val checkPhoneNumber:Boolean=viewModel.validatePhoneNumber(Constant.USER_PHONE_NUMBER)
+        val phoneNumberEqual:Boolean=viewModel.phoneEqual(Constant.USER_PHONE_NUMBER)
+        val phoneNumberLength:Boolean=viewModel.phoneLength(Constant.USER_PHONE_NUMBER)
 
-        if(editPhone.editText?.text.toString()==number && checkPhoneNumber){
+        if(phoneNumberEqual && checkPhoneNumber && phoneNumberLength){
 
             val fragmentManager=requireActivity().supportFragmentManager
             val fragmentTransaction=fragmentManager.beginTransaction()
 
             val bundle= Bundle()
-            bundle.putString("PhoneKey",number)
+            bundle.putString(Constant.USER_KEY_PHONE,Constant.USER_PHONE_NUMBER)
             fragment.arguments=bundle
 
             fragmentTransaction.setCustomAnimations(
@@ -90,7 +94,7 @@ class FragmentLogin : Fragment(), View.OnClickListener {
             fragmentTransaction.commit()
         }
         else {
-            Toast.makeText(requireActivity(), "Wrong Phone Number", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireActivity(), getString(R.string.lbl_wrong), Toast.LENGTH_SHORT).show()
         }
     }
 }

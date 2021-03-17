@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModel
 import com.example.fragmentassg2.R
 import com.example.fragmentassg2.fragments.FragmentPassword
+import com.example.fragmentassg2.util.Constant
 import kotlinx.android.synthetic.main.login_fragment.*
 
 class LoginViewModel: ViewModel() {
@@ -18,6 +19,14 @@ class LoginViewModel: ViewModel() {
 
     fun validatePhoneNumber(phoneNumber: String): Boolean {
         return phoneNumber.isNotEmpty() && phoneNumber.isNotBlank()
+    }
+
+    fun phoneEqual(numberEqual:String):Boolean{
+        return numberEqual==Constant.USER_PHONE_NUMBER
+ }
+
+    fun phoneLength(numberLength:String):Boolean{
+        return numberLength.length==10
     }
 
 }

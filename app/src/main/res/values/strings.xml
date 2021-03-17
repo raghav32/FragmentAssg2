@@ -28,5 +28,8 @@
     <string name="forgotpass">Forgot Password</string>
     <string name="lbl_cancel">Cancel</string>
     <string name="lbl_unblock">Unblock account</string>
+    <string name="lbl_wrong">Wrong Phone Number</string>
+    <string name="lbl_wrong_pass">Wrong Password</string>
+    <string name="lbl_wrong_otp">Wrong OTP</string>
 
 </resources>
