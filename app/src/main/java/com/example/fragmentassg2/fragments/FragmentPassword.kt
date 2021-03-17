@@ -34,7 +34,6 @@ class FragmentPassword : Fragment(), View.OnClickListener {
         Log.i("PasswordFragment", "Called ViewModelProvider.get")
         // Get the viewModel
         viewModel = ViewModelProvider(this).get(PasswordViewModel::class.java)
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

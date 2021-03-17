@@ -1,6 +1,8 @@
 package com.example.fragmentassg2.fragments
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -47,6 +49,22 @@ class FragmentLogin : Fragment(), View.OnClickListener {
 
         (requireActivity() as MainActivity).showBackButton(false)
 
+        editPhoneIme.addTextChangedListener(object:TextWatcher
+        {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                    if(editPhone.editText?.text.toString().length==10)
+                        btnLogin.isEnabled=true
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+            }
+
+        })
+
+
         view.findViewById<TextInputEditText>(R.id.editPhoneIme).setOnEditorActionListener { v, actionId, event ->
             return@setOnEditorActionListener when (actionId) {
                 EditorInfo.IME_ACTION_DONE -> {
@@ -73,6 +91,8 @@ class FragmentLogin : Fragment(), View.OnClickListener {
         val checkPhoneNumber:Boolean=viewModel.validatePhoneNumber(Constant.USER_PHONE_NUMBER)
         val phoneNumberEqual:Boolean=viewModel.phoneEqual(Constant.USER_PHONE_NUMBER)
         val phoneNumberLength:Boolean=viewModel.phoneLength(Constant.USER_PHONE_NUMBER)
+
+
 
         if(phoneNumberEqual && checkPhoneNumber && phoneNumberLength){
 
