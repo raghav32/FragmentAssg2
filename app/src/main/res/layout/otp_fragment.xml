@@ -42,11 +42,21 @@
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginTop="@dimen/margin7"
         android:textSize="@dimen/text12"
-        android:textColor="#506d85"
+        android:textColor="@color/text"
         android:text="@string/lbl_enter_otp_sent_to"
         android:layout_marginLeft="@dimen/margin20" />
 
-
+    <TextView
+        android:id="@+id/numberOtp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/tvVerify"
+        app:layout_constraintTop_toBottomOf="@+id/tvOTP"
+        android:textColor="@color/text"
+        android:textSize="@dimen/text12"
+        android:layout_marginLeft="@dimen/margin3"
+        android:layout_marginTop="@dimen/margin7"
+        android:layout_marginStart="@dimen/margin3" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/editOTP"

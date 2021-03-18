@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/fragmentLogin">
+
+    <fragment
+        android:id="@+id/fragmentLogin"
+        android:name="com.example.fragmentassg2.fragments.FragmentLogin"
+        android:label="FragmentLogin"
+        tools:layout="@layout/login_fragment">
+        <action
+            android:id="@+id/action_fragmentLogin_to_fragmentPassword"
+            app:destination="@id/fragmentPassword"
+            app:enterAnim="@anim/enter_right_to_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentPassword"
+        android:name="com.example.fragmentassg2.fragments.FragmentPassword"
+        android:label="FragmentPassword"
+        tools:layout="@layout/password_fragment">
+        <action
+            android:id="@+id/action_fragmentPassword_to_fragmentOTP"
+            app:destination="@id/fragmentOTP"
+            app:enterAnim="@anim/enter_right_to_left" />
+        <action
+            android:id="@+id/action_fragmentPassword_to_fragmentLogin"
+            app:destination="@id/fragmentLogin"
+            app:enterAnim="@anim/enter_left_to_right" />
+        <argument
+            android:name="otpHelp"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentOTP"
+        android:name="com.example.fragmentassg2.fragments.FragmentOTP"
+        android:label="FragmentOTP"
+        tools:layout="@layout/otp_fragment">
+        <action
+            android:id="@+id/action_fragmentOTP_to_homeActivity"
+            app:destination="@id/homeActivity"
+            app:enterAnim="@anim/enter_right_to_left" />
+        <action
+            android:id="@+id/action_fragmentOTP_to_fragmentPassword"
+            app:destination="@id/fragmentPassword" />
+        <argument
+            android:name="otpNum"
+            app:argType="string" />
+    </fragment>
+    <activity
+        android:id="@+id/homeActivity"
+        android:name="com.example.fragmentassg2.HomeActivity"
+        android:label="activity_home"
+        tools:layout="@layout/activity_home" />
+</navigation>

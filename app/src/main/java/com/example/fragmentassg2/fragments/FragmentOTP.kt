@@ -10,6 +10,8 @@ import android.view.inputmethod.EditorInfo
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.fragmentassg2.HomeActivity
 import com.example.fragmentassg2.MainActivity
 import com.example.fragmentassg2.R
@@ -22,6 +24,7 @@ import kotlinx.android.synthetic.main.otp_fragment.*
 class FragmentOTP : Fragment() {
 
     private lateinit var viewModel: OTPViewModel
+    private val args:FragmentOTPArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -41,7 +44,7 @@ class FragmentOTP : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        tvVerify.text=getString(R.string.lbl_enter_otp_sent_to,arguments?.getString(Constant.USER_KEY_PHONE))
+        numberOtp.text=args.otpNum
 
         (requireActivity() as MainActivity).showBackButton(true)
 
@@ -68,7 +71,6 @@ class FragmentOTP : Fragment() {
     }
 
     private fun submit(){
-        val intent=Intent(context, HomeActivity::class.java)
-        startActivity(intent)
+        findNavController().navigate(R.id.action_fragmentOTP_to_homeActivity)
     }
 }

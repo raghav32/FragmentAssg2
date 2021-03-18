@@ -9,6 +9,8 @@ import android.view.inputmethod.EditorInfo
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.fragmentassg2.MainActivity
 import com.example.fragmentassg2.R
 import com.example.fragmentassg2.util.Constant
@@ -20,6 +22,7 @@ import kotlinx.android.synthetic.main.password_fragment.*
 class FragmentPassword : Fragment(), View.OnClickListener {
 
     private lateinit var viewModel: PasswordViewModel
+    private val args:FragmentPasswordArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -54,47 +57,24 @@ class FragmentPassword : Fragment(), View.OnClickListener {
                 else -> false
             }
         }
-
     }
-
-
     override fun onClick(v: View?) {
         when(v){
-
             tvFor->Toast.makeText(context,getString(R.string.forgotpass),Toast.LENGTH_SHORT).show()
-
             btnProceed->{
                proceed()
             }
-
         }
     }
-
        private fun proceed(){
-           val mobile= arguments?.getString(Constant.USER_KEY_PHONE)
 
+           val mobile= args.otpHelp
            val checkPass:Boolean=viewModel.validatePassword(editPassword.editText?.text.toString())
-
-
            if( checkPass){
-            val fragmentOtp= FragmentOTP()
-            val fragmentManager=activity!!.supportFragmentManager
-            val fragmentTransaction=fragmentManager.beginTransaction()
-
-            val bundle=Bundle()
-            bundle.putString(Constant.USER_KEY_PHONE,mobile)
-            fragmentOtp.arguments=bundle
-
-            fragmentTransaction.setCustomAnimations(
-                R.anim.enter_right_to_left,
-                R.anim.exit_right_to_left,
-                R.anim.enter_left_to_right,
-                R.anim.exit_left_to_right
-            )
-            fragmentTransaction.replace(R.id.root_layout,fragmentOtp)
-            fragmentTransaction.addToBackStack(null)
-            fragmentTransaction.commit()
+              val action1= FragmentPasswordDirections.actionFragmentPasswordToFragmentOTP(mobile)
+               findNavController().navigate(action1)
         }
+
         else
         Toast.makeText(context,getString(R.string.lbl_wrong_pass),Toast.LENGTH_SHORT).show()
 
