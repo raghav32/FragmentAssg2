@@ -4,48 +4,99 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     android:background="@color/white">
 
+<TextView
+    android:id="@+id/tvOtpSent"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:background="@color/green"
+    android:textSize="@dimen/text20"
+    android:textAlignment="center"
+    android:text="@string/lbl_otpSent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    android:gravity="center_horizontal" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/tvOTP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="50dp"
-        android:text="Enter OTP"
-        android:textColor="@color/black"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/margin50"
+        android:layout_marginLeft="@dimen/margin16"
+        android:text="@string/lbl_enterOTP"
+        android:textColor="#1d2f54"
+        android:textSize="@dimen/text30"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/tvOtpSent"
+        android:layout_marginStart="@dimen/margin20" />
 
-    <com.chaos.view.PinView
-        android:id="@+id/pinView"
-        style="@style/PinWidget.PinView"
+    <TextView
+        android:id="@+id/tvVerify"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="208dp"
-        android:cursorVisible="true"
-        android:inputType="number"
-        android:textColor="@color/black"
-        app:cursorColor="@color/black"
-        app:hideLineWhenFilled="true"
-        app:itemCount="6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tvOTP"
+        android:layout_marginStart="@dimen/margin16"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="@dimen/margin7"
+        android:textSize="@dimen/text12"
+        android:textColor="#506d85"
+        android:text="@string/lbl_enter_otp_sent_to"
+        android:layout_marginLeft="@dimen/margin20" />
 
-    <Button
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/editOTP"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="@dimen/margin61"
+        android:layout_marginLeft="@dimen/margin16"
+        android:layout_marginRight="@dimen/margin16"
+        app:boxBackgroundColor="@color/grey"
+        app:layout_constraintTop_toBottomOf="@+id/tvOTP">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editOTPIme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/lbl_enterOTP"
+            android:imeOptions="actionDone"
+            android:inputType="number"
+            android:textColor="@color/black"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:text="@string/lbl_otpTime"
+        android:layout_marginTop="@dimen/margin16"
+        android:textColor="#8ba6c1"
+        android:layout_marginRight="@dimen/margin16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/editOTP"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/margin20" />
+
+    <TextView
         android:id="@+id/btnSubmit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="126dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"
+        android:layout_width="0dp"
+        android:gravity="center"
+        android:layout_height="@dimen/margin40"
+        android:layout_marginTop="@dimen/margin40"
+        android:background="#00aced"
+        android:layout_marginLeft="@dimen/margin16"
+        android:layout_marginRight="@dimen/margin16"
+        android:layout_marginBottom="@dimen/margin16"
         android:textColor="@color/black"
-        android:text="Submit"
+        android:text="@string/lbl_btn_submit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pinView" />
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

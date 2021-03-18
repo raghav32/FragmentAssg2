@@ -7,15 +7,72 @@
     android:background="@color/white"
     tools:context=".HomeActivity">
 
-    <TextView
-        android:id="@+id/textView12"
+    <ImageView
+        android:id="@+id/imageViewPaytm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="HELLO WORLD"
-        android:textSize="30sp"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginLeft="@dimen/margin20"
+        android:layout_marginTop="@dimen/margin100"
+        android:layout_marginRight="@dimen/margin20"
+        android:src="@drawable/ic_paytm"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+         />
+
+    <TextView
+        android:id="@+id/tvBlock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin24"
+        android:text="@string/lbl_accountBlocked"
+        android:textSize="@dimen/size18"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewPaytm"
+        android:gravity="center_horizontal" />
+
+    <TextView
+        android:id="@+id/tvInfo2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin34"
+        android:gravity="center"
+        android:lineHeight="20sp"
+        android:text="@string/lbl_home_info"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text14"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvBlock" />
+
+    <TextView
+        android:id="@+id/buttonUnblock"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/margin30"
+        android:gravity="center"
+        android:layout_marginLeft="@dimen/margin20"
+        android:layout_marginTop="@dimen/margin12"
+        android:layout_marginRight="@dimen/margin20"
+        android:background="@color/azure"
+        android:text="@string/lbl_unblock"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvInfo2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin24"
+        android:text="@string/lbl_cancel"
+        android:textSize="@dimen/text16"
+        android:gravity="center"
+        android:textColor="@color/azure"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonUnblock" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
