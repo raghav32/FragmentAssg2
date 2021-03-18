@@ -52,14 +52,16 @@ class FragmentLogin : Fragment(), View.OnClickListener {
         editPhoneIme.addTextChangedListener(object:TextWatcher
         {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                    if(editPhone.editText?.text.toString().length==10)
+                    if( editPhone.editText?.text.toString()==Constant.USER_PHONE_NUMBER && editPhone.editText?.text.toString().length==10 )
                         btnLogin.isEnabled=true
             }
 
             override fun afterTextChanged(s: Editable?) {
+
             }
 
         })
@@ -88,13 +90,9 @@ class FragmentLogin : Fragment(), View.OnClickListener {
     }
     private fun login(){
 
-        val checkPhoneNumber:Boolean=viewModel.validatePhoneNumber(Constant.USER_PHONE_NUMBER)
-        val phoneNumberEqual:Boolean=viewModel.phoneEqual(Constant.USER_PHONE_NUMBER)
-        val phoneNumberLength:Boolean=viewModel.phoneLength(Constant.USER_PHONE_NUMBER)
+        val checkPhoneNumber:Boolean=viewModel.validatePhoneNumber(editPhone.editText?.text.toString())
 
-
-
-        if(phoneNumberEqual && checkPhoneNumber && phoneNumberLength){
+        if(checkPhoneNumber){
 
             val fragmentManager=requireActivity().supportFragmentManager
             val fragmentTransaction=fragmentManager.beginTransaction()

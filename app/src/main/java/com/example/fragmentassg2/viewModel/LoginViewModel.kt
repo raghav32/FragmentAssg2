@@ -18,15 +18,10 @@ class LoginViewModel: ViewModel() {
     }
 
     fun validatePhoneNumber(phoneNumber: String): Boolean {
-        return phoneNumber.isNotEmpty() && phoneNumber.isNotBlank()
+        return phoneNumber.isNotEmpty() &&  phoneNumber==Constant.USER_PHONE_NUMBER
     }
 
-    fun phoneEqual(numberEqual:String):Boolean{
-        return numberEqual==Constant.USER_PHONE_NUMBER
- }
-
-    fun phoneLength(numberLength:String):Boolean{
-        return numberLength.length==10
-    }
-
+  //  fun phoneEqual(numberEqual:String):Boolean{
+    //    return numberEqual==Constant.USER_PHONE_NUMBER
+// }
 }

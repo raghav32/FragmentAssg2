@@ -12,14 +12,6 @@ class PasswordViewModel:ViewModel() {
     }
 
     fun validatePassword(pass:String):Boolean{
-        return pass.isNotEmpty() && pass.isNotBlank()
+        return pass.isNotEmpty() && pass.isNotBlank() && return pass== Constant.USER_PASS
     }
-
-    fun passEqual(password:String):Boolean{
-        if(password== Constant.USER_PASS)
-            return true
-        else
-            return false
-    }
-
 }

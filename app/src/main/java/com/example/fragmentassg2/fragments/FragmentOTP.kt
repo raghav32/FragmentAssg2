@@ -56,10 +56,9 @@ class FragmentOTP : Fragment() {
         }
 
         btnSubmit.setOnClickListener(){
-            val checkOTP:Boolean=viewModel.validateOTP(Constant.USER_OTP)
-            val otpEq:Boolean=viewModel.otpEqual(Constant.USER_OTP)
+            val checkOTP:Boolean=viewModel.validateOTP(editOTP.editText?.text.toString())
 
-            if(otpEq && checkOTP){
+            if(checkOTP){
                 submit()
                 requireActivity().finish()
             }

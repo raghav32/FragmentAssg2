@@ -12,13 +12,6 @@ class OTPViewModel:ViewModel() {
     }
 
     fun validateOTP(otp: String): Boolean {
-        return otp.isNotEmpty() && otp.isNotBlank()
-    }
-
-    fun otpEqual(user_otp:String):Boolean{
-        if(user_otp== Constant.USER_OTP)
-            return true
-        else
-            return false
+        return otp.isNotEmpty() && otp.isNotBlank() &&  otp== Constant.USER_OTP
     }
 }

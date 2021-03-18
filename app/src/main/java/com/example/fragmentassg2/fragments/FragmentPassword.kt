@@ -73,10 +73,10 @@ class FragmentPassword : Fragment(), View.OnClickListener {
        private fun proceed(){
            val mobile= arguments?.getString(Constant.USER_KEY_PHONE)
 
-           val checkPass:Boolean=viewModel.validatePassword(Constant.USER_PASS)
-            val passwordEqual:Boolean=viewModel.passEqual(Constant.USER_PASS)
+           val checkPass:Boolean=viewModel.validatePassword(editPassword.editText?.text.toString())
 
-           if(passwordEqual && checkPass){
+
+           if( checkPass){
             val fragmentOtp= FragmentOTP()
             val fragmentManager=activity!!.supportFragmentManager
             val fragmentTransaction=fragmentManager.beginTransaction()
