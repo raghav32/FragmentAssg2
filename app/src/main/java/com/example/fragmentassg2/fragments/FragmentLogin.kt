@@ -59,9 +59,7 @@ class FragmentLogin : Fragment(), View.OnClickListener {
 
                     if( editPhone.editText?.text.toString()==Constant.USER_PHONE_NUMBER && editPhone.editText?.text.toString().length==10 )
                         btnLogin.isEnabled=true
-
             }
-
             override fun afterTextChanged(s: Editable?) {
 
             }
