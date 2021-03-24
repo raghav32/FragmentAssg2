@@ -31,5 +31,7 @@
     <string name="lbl_wrong">Wrong Phone Number</string>
     <string name="lbl_wrong_pass">Wrong Password</string>
     <string name="lbl_wrong_otp">Wrong OTP</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

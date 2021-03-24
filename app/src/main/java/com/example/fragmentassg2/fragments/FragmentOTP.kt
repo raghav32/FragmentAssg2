@@ -71,6 +71,6 @@ class FragmentOTP : Fragment() {
     }
 
     private fun submit(){
-        findNavController().navigate(R.id.action_fragmentOTP_to_homeActivity)
+        findNavController().navigate(R.id.action_fragmentOTP_to_listFragment)
     }
 }

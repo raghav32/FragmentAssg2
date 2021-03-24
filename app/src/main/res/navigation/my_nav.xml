@@ -37,20 +37,30 @@
         android:name="com.example.fragmentassg2.fragments.FragmentOTP"
         android:label="FragmentOTP"
         tools:layout="@layout/otp_fragment">
-        <action
-            android:id="@+id/action_fragmentOTP_to_homeActivity"
-            app:destination="@id/homeActivity"
-            app:enterAnim="@anim/enter_right_to_left" />
-        <action
-            android:id="@+id/action_fragmentOTP_to_fragmentPassword"
-            app:destination="@id/fragmentPassword" />
         <argument
             android:name="otpNum"
             app:argType="string" />
+        <action
+            android:id="@+id/action_fragmentOTP_to_listFragment"
+            app:destination="@id/listFragment" />
     </fragment>
-    <activity
-        android:id="@+id/homeActivity"
-        android:name="com.example.fragmentassg2.HomeActivity"
-        android:label="activity_home"
-        tools:layout="@layout/activity_home" />
+
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.example.fragmentassg2.fragments.ListFragment"
+        android:label="fragment_list"
+        tools:layout="@layout/fragment_list" >
+        <action
+            android:id="@+id/action_listFragment_to_addFragment"
+            app:destination="@id/addFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addFragment"
+        android:name="com.example.fragmentassg2.fragments.AddFragment"
+        android:label="fragment_add"
+        tools:layout="@layout/fragment_add" >
+        <action
+            android:id="@+id/action_addFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+    </fragment>
 </navigation>
