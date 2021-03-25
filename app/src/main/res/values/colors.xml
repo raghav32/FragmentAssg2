@@ -11,4 +11,5 @@
     <color name="grey">#8ba6c1</color>
     <color name="green">#05EC0F</color>
     <color name="text">#506d85</color>
+    <color name="forgotText">#8ba6c1</color>
 </resources>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="@dimen/margin16"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/bsTvLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lbl_bsLogin"
+        android:textSize="@dimen/text24"
+        android:textColor="@color/black"
+        android:layout_marginTop="@dimen/margin30"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/bsTvLoginInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lbl_bsOTPSubHead"
+        android:textSize="@dimen/text14"
+        android:textColor="@color/black"
+        android:layout_marginTop="@dimen/margin12"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/bsTvLogin"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/bsEditOtp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin50"
+        app:boxBackgroundColor="@color/grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bsTvLoginInfo">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/bsEditPhoneIme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionDone"
+            android:hint="@string/lbl_bsOTP"
+            android:inputType="number"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/bsTvForgot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin16"
+        android:textColor="@color/forgotText"
+        android:textSize="@dimen/text12"
+        android:text="@string/lbl_otpTime"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bsEditOtp"/>
+
+    <TextView
+        android:id="@+id/bsBtnOtp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/lbl_bsOTPBtn"
+        android:paddingTop="@dimen/margin17"
+        android:paddingBottom="@dimen/margin16"
+        android:gravity="center"
+        android:background="@color/azure"
+        android:textColor="@color/black"
+        android:layout_marginTop="@dimen/margin40"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bsTvForgot"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
