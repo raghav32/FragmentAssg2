@@ -3,17 +3,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/margin16"
-    android:id="@+id/root"
+    android:background="@drawable/rounded"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TextView
         android:id="@+id/bsTvLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login to Paytm"
-        android:textSize="24sp"
+        android:text="@string/lbl_bsLogin"
+        android:textSize="@dimen/text24"
         android:textColor="@color/black"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="@dimen/margin32"
         android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
@@ -22,8 +22,8 @@
         android:id="@+id/bsTvLoginInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enter your mobile number registered with Paytm"
-        android:textSize="14sp"
+        android:text="@string/lbl_bsLoginSubHead"
+        android:textSize="@dimen/text14"
         android:textColor="@color/black"
         android:layout_marginTop="@dimen/margin12"
         android:textStyle="bold"
@@ -56,10 +56,10 @@
         android:id="@+id/bsTvForgot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="@dimen/margin16"
         android:textColor="@color/azure"
-        android:textSize="12sp"
-        android:text="Forgot Password/ Login Issues"
+        android:textSize="@dimen/text12"
+        android:text="@string/lbl_bsEditSubHead"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bsEditPhone"/>
 
@@ -68,16 +68,15 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/lbl_btn_proceed"
-        android:paddingTop="18dp"
-        android:paddingBottom="16dp"
+        android:paddingTop="@dimen/margin17"
+        android:paddingBottom="@dimen/margin16"
         android:gravity="center"
         android:background="@color/azure"
         android:textColor="@color/black"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="@dimen/margin30"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bsTvForgot"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/bsTvForgot" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

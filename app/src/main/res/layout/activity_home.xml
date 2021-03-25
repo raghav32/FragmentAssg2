@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin24"
         android:text="@string/lbl_accountBlocked"
-        android:textSize="@dimen/size18"
+        android:textSize="@dimen/text18"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
