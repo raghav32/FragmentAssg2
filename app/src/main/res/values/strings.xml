@@ -18,7 +18,7 @@
     <string name="lbl_otpSent">OTP sent successfully</string>
     <string name="lbl_enterOTP">Enter OTP</string>
     <string name="otpNumber">Verify otp sent to </string>
-    <string name="lbl_enter_otp_sent_to">Enter OTP sent on %s</string>
+    <string name="lbl_enter_otp_sent_to">Enter OTP sent on</string>
     <string name="password">Enter Password</string>
 
     <string name="lbl_accountBlocked">Account Blocked</string>
