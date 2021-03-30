@@ -1,5 +1,7 @@
 package com.example.fragmentassg2.fragments
 
+import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -7,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -71,6 +74,12 @@ class FragmentOTP : Fragment() {
     }
 
     private fun submit(){
+        requireContext().hideKeyboard(editOTP)
         findNavController().navigate(R.id.action_fragmentOTP_to_listFragment)
+
+    }
+    private fun Context.hideKeyboard(view: View) {
+        val inputMethodManager = getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
+        inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
     }
 }
